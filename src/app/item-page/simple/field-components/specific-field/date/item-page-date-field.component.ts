@@ -26,9 +26,10 @@ export class ItemPageDateFieldComponent extends ItemPageFieldComponent {
     /**
      * Fields (schema.element.qualifier) used to render their values.
      * In this component, we want to display values for metadata 'dc.date.issued'
+     * AUT - this needs to be moved to the aut theme when the item page bug is fixed
      */
     fields: string[] = [
-        'dc.date.issued'
+        'dc.date.copyright'
     ];
 
     /**

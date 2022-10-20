@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  margin-top: calc(-1 * var(--ds-content-spacing));
+  margin-bottom: calc(-1 * var(--ds-content-spacing));
+}
+
+.display-3 {
+  word-break: break-word;
+}
+
+.display-4 {
+  word-break: break-word;
+  text-align: center;
+}
+
+.display-5 {
+  word-break: break-word;
+  text-align: center;
+  font-weight: 300;
+}
+
+.jumbotron {
+  background-image: url(/assets/aut/images/AUTplaza.jpg);
+  background-size: cover;
+  background-position-y: bottom;
+  margin-bottom: 4rem;
+}
+
+.homePanel {
+  background-color: rgba(251,251,251,0.8);
+  border-radius: 25px;
+}
+
+a {
+  color: var(--ds-home-news-link-color);
+
+  @include hover {
+    color: var(--ds-home-news-link-hover-color);
+  }
+}

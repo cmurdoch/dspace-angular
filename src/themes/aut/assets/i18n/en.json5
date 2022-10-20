@@ -1,0 +1,42 @@
+{
+  // DSpace default: "All of DSpace"
+  "menu.section.browse_global": "Browse DSpace",
+
+  // DSpace default: "DSpace Angular :: "
+  "repository.title.prefix": "DSpace :: ",
+
+  // DSpace default: "copyright © 2002-{{ year }}",
+  "footer.copyright": "Hosted by Tuwhera, an initiative of the Auckland University of Technology Library",
+
+  // DSpace default: "All of DSpace"
+  "menu.section.browse_global": "Browse",
+
+  // DSpace default: "DSpace Angular :: "
+  "repository.title.prefix": "Tuwhera Repository :: ",
+
+  // DSpace default: "Permanent URI for this collection",
+  "collection.page.handle": "Permanent link for this collection",
+
+  // DSpace default: "Permanent URI for this community",
+  "community.page.handle": "Permanent link for this community",
+
+  // DSpace default: "URI",
+  "item.page.uri": "Permanent link",
+
+  //DSpace default: "Citation"
+  "item.page.citation": "Source",
+
+  // Additions - not in default
+  // item.page
+  "item.page.advisor": "Supervisor",
+
+  "item.page.thesis.name": "Degree name",
+
+  "item.page.dc.type": "Item type",
+
+  "item.page.doi": "DOI",
+
+  "item.page.relation.uri": "Publisher's version",
+
+  "item.page.dc.rights": "Rights statement"
+}

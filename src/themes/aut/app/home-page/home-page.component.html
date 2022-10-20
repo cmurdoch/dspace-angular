@@ -1,0 +1,28 @@
+<ds-themed-home-news></ds-themed-home-news>
+<div class="container">
+  <ng-container *ngIf="(site$ | async) as site">
+    <ds-view-tracker [object]="site"></ds-view-tracker>
+  </ng-container>
+  <div class="autCommunityPanels">
+    <div class="container">
+      <div class="card-deck autCommunityPanelsRow">
+        <div class="card text-center pt-2">
+          <a routerlink="/communities/b168151e-a186-41c7-bce5-88f04793bbd4" class="autCommunityLinks text-decoration-none" href="/communities/b168151e-a186-41c7-bce5-88f04793bbd4">
+            <img class="card-img-top" src="/assets/aut/images/internationaloutlook.png">
+            <div class="autCommunityText">
+              <span>Open Theses & Dissertations</span>
+            </div>
+          </a>
+        </div>
+        <div class="card text-center pt-2">
+          <a routerlink="/communities/c9c94ae0-30a0-4a80-9496-c34060caaac0" class="autCommunityLinks text-decoration-none" href="/communities/c9c94ae0-30a0-4a80-9496-c34060caaac0">
+            <img class="card-img-top" src="/assets/aut/images/researchimpact.png">
+            <div class="autCommunityText">
+              <span>Open Research</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
