@@ -1,2 +1,4 @@
 config.*.yml
 !config.example.yml
+!config.dev.yml
+!config.prod.yml
