@@ -38,5 +38,12 @@
 
   "item.page.relation.uri": "Publisher's version",
 
-  "item.page.dc.rights": "Rights statement"
+  "item.page.dc.rights": "Rights statement",
+
+  // browse
+  "browse.metadata.advisor": "Supervisor",
+
+  "browse.metadata.advisor.breadcrumbs": "Browse by Supervisor",
+
+  "menu.section.browse_global_by_advisor": "By Supervisor"
 }
