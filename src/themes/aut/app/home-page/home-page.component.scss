@@ -1,7 +1,37 @@
-.autCommunityPanels img {
-  max-width: 250px;
-}
-
 .autCommunityText {
   font-size: 1.5rem;
+}
+
+.odt-bg-green {
+  background-color: #5CC696;
+}
+
+.or-bg-blue {
+  background-color: #5E95BD;
+}
+
+.autCommunityPanels .card-title {
+  color: #FFF;
+}
+
+.autCommunityPanels .fas {
+  color: #000;
+  opacity: 0.4;
+}
+
+.card-footer {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  text-align: center;
+  padding: 3px 0;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-decoration: none;
+  border-top: 0;
+}
+
+.card-footer:hover {
+  background: rgba(0, 0, 0, 0.3);
 }

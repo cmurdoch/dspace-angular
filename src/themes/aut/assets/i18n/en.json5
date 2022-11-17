@@ -45,5 +45,7 @@
 
   "browse.metadata.advisor.breadcrumbs": "Browse by Supervisor",
 
-  "menu.section.browse_global_by_advisor": "By Supervisor"
+  "menu.section.browse_global_by_advisor": "By Supervisor",
+
+  "browse.comcol.by.advisor": "By Supervisor"
 }
