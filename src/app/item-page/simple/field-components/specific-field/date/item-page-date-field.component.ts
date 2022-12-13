@@ -29,7 +29,7 @@ export class ItemPageDateFieldComponent extends ItemPageFieldComponent {
      * AUT - this needs to be moved to the aut theme when the item page bug is fixed
      */
     fields: string[] = [
-        'dc.date.copyright'
+        'dc.date.issued'
     ];
 
     /**
