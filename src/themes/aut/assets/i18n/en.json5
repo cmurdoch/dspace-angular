@@ -1,14 +1,5 @@
 {
   // DSpace default: "All of DSpace"
-  "menu.section.browse_global": "Browse DSpace",
-
-  // DSpace default: "DSpace Angular :: "
-  "repository.title.prefix": "DSpace :: ",
-
-  // DSpace default: "copyright © 2002-{{ year }}",
-  "footer.copyright": "Hosted by Tuwhera, an initiative of the Auckland University of Technology Library",
-
-  // DSpace default: "All of DSpace"
   "menu.section.browse_global": "Browse",
 
   // DSpace default: "DSpace Angular :: "
@@ -47,5 +38,13 @@
 
   "menu.section.browse_global_by_advisor": "By Supervisor",
 
-  "browse.comcol.by.advisor": "By Supervisor"
+  "browse.comcol.by.advisor": "By Supervisor",
+
+  // footer
+  "footer.link.tuwhera": "Tuwhera",
+
+  //submission form
+  "submission.sections.submit.progressbar.describe.step1": "About you and your thesis",
+
+  "submission.sections.submit.progressbar.describe.step2": "More details about your thesis"
 }
