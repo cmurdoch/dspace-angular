@@ -1,7 +1,7 @@
 # This image will be published as dspace/dspace-angular
 # See https://github.com/DSpace/dspace-angular/tree/main/docker for usage details
 
-FROM node:14-alpine
+FROM docker.io/library/node:14-alpine
 WORKDIR /app
 ADD . /app/
 EXPOSE 4000
@@ -11,8 +11,20 @@ ENV NODE_OPTIONS=--max_old_space_size=4144
 # See, for example https://github.com/yarnpkg/yarn/issues/5540
 RUN yarn install --network-timeout 300000
 
-# On startup, run in DEVELOPMENT mode (this defaults to live reloading enabled, etc).
-# Listen / accept connections from all IP addresses.
-# NOTE: At this time it is only possible to run Docker container in Production mode
-# if you have a public IP. See https://github.com/DSpace/dspace-angular/issues/1485
-CMD yarn serve --host 0.0.0.0
+#generate the production browser and server stubs
+RUN yarn run build:prod
+
+#environment variables - can be overwritten in the environmental variables of the container
+ENV DSPACE_UI_SSL='false'
+ENV DSPACE_UI_HOST='openrepository.aut.ac.nz'
+ENV DSPACE_UI_PORT='4000'
+ENV DSPACE_UI_NAMESPACE='/'
+ENV DSPACE_REST_SSL='true'
+ENV DSPACE_REST_HOST='openrepositorystage.aut.ac.nz'
+ENV DSPACE_REST_PORT='443'
+ENV DSPACE_REST_NAMESPACE='/server'
+
+# ssr is production mode
+# make it listen on 0.0.0.0 and use the pod to handle external networking
+CMD yarn serve:ssr --host 0.0.0.0
+
