@@ -16,15 +16,17 @@ RUN yarn run build:prod
 
 #environment variables - can be overwritten in the environmental variables of the container
 ENV DSPACE_UI_SSL='false'
-ENV DSPACE_UI_HOST='openrepository.aut.ac.nz'
+ENV DSPACE_UI_HOST='localhost'
 ENV DSPACE_UI_PORT='4000'
 ENV DSPACE_UI_NAMESPACE='/'
 ENV DSPACE_REST_SSL='true'
-ENV DSPACE_REST_HOST='openrepositorystage.aut.ac.nz'
+ENV DSPACE_REST_HOST='openrepositorydev.aut.ac.nz'
 ENV DSPACE_REST_PORT='443'
 ENV DSPACE_REST_NAMESPACE='/server'
 
 # ssr is production mode
 # make it listen on 0.0.0.0 and use the pod to handle external networking
+#for prod use ssr - dev needs ssr disabled because of cross site scripting issues
+#CMD yarn serve:ssr --host 0.0.0.0
 CMD yarn serve:ssr --host 0.0.0.0
 
