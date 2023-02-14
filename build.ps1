@@ -1,1 +1,1 @@
-podman build ./ -t libraryappscontainerregistry.azurecr.io/dspaceui:latest
+podman build ./ -t libraryappscontainerregistry.azurecr.io/dspaceangularaut:latest
