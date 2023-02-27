@@ -11,6 +11,8 @@ ENV NODE_OPTIONS=--max_old_space_size=4144
 # See, for example https://github.com/yarnpkg/yarn/issues/5540
 RUN yarn install --network-timeout 300000
 
+#include any changes to the language files
+#RUN yarn merge-i18n -s src/themes/aut/assets/i18n 
 #generate the production browser and server stubs
 RUN yarn run build:prod
 
