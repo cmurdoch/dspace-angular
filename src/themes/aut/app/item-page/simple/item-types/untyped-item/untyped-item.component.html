@@ -83,10 +83,11 @@
                                 [fields]="['dc.identifier.citation']"
                                 [label]="'item.page.citation'">
     </ds-generic-item-page-field>
-    <ds-generic-item-page-field [item]="object"
-                                [fields]="['dc.identifier.doi']"
-                                [label]="'item.page.doi'">
-    </ds-generic-item-page-field>
+    <ds-metadata-field-wrapper [label]="'item.page.doi' | translate">
+      <a class="dont-break-out" *ngFor="let mdValue of object?.allMetadata(['dc.identifier.doi']); let last=last;" [href]="'https://dx.doi.org/' + mdValue.value">
+         {{ mdValue.value }}<span *ngIf="!last" [innerHTML]="'<br/>'"></span>
+      </a>
+  </ds-metadata-field-wrapper>
     <ds-item-page-uri-field [item]="object"
                             [fields]="['dc.relation.uri']"
                             [label]="'item.page.relation.uri'">
