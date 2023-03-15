@@ -16,7 +16,7 @@
         </ng-container>
       </ng-container>
         <ng-container *ngIf="mediaList[0]?.format === 'image'">
-          <ds-media-viewer-image [images]="mediaList"></ds-media-viewer-image>
+          <ds-media-viewer-image [images]="mediaList" [linkURL]="mediaList[0]?.bitstream._links.content.href"></ds-media-viewer-image>
         </ng-container>
     </ng-container>
     <ng-container
@@ -29,7 +29,8 @@
     >
       <ds-media-viewer-image
         [image]="mediaList[0]?.thumbnail || thumbnailPlaceholder"
-        [preview]="false"
+        [preview]="false" 
+        [linkURL]="mediaList[0]?.bitstream._links.content.href"
       ></ds-media-viewer-image>
     </ng-container>
   </div>

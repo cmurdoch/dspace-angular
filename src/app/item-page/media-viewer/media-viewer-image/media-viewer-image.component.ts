@@ -17,6 +17,7 @@ export class MediaViewerImageComponent implements OnInit {
   @Input() images: MediaViewerItem[];
   @Input() preview?: boolean;
   @Input() image?: string;
+  @Input() linkURL?: string;
 
   loggedin: boolean;
 
