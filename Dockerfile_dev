@@ -28,5 +28,6 @@ ENV DSPACE_REST_NAMESPACE='/server'
 #   site scripting so we can only deploy ssr onto the same site as the server api
 # make it listen on 0.0.0.0 and use the pod to handle external networking
 
-CMD yarn serve:ssr --host 0.0.0.0
+#CMD yarn serve:ssr --host 0.0.0.0
+CMD yarn serve:ssr --host 0.0.0.0 --port 4000 --public-host openrepositorydev.aut.ac.nz
 
