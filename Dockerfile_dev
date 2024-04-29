@@ -16,7 +16,7 @@ RUN yarn run build:prod
 
 #environment variables - can be overwritten in the environmental variables of the container
 ENV DSPACE_UI_SSL='false'
-ENV DSPACE_UI_HOST='localhost'
+ENV DSPACE_UI_HOST='openrepositorydev.aut.ac.nz'
 ENV DSPACE_UI_PORT='4000'
 ENV DSPACE_UI_NAMESPACE='/'
 ENV DSPACE_REST_SSL='true'
