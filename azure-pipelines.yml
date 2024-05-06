@@ -20,6 +20,9 @@ variables:
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
+  # Variable to control the building of the dev image
+  buildProdImage: false
+  buildStageImage: false
 
 stages:
 - stage: Build
