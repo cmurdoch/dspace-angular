@@ -26,16 +26,36 @@ stages:
   displayName: Build and push stage
   jobs:
   - job: Build
-    displayName: Build
+    displayName: Build main image
     pool:
       vmImage: $(vmImageName)
     steps:
     - task: Docker@2
-      displayName: Build and push an image to container registry
+      displayName: Build and push a dev image to container registry
+      inputs:
+        command: buildAndPush
+        repository: $(imageRepository)
+        dockerfile: $(docker_devfilePath)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          dev-$(tag)
+    - task: Docker@2
+      displayName: Build and push a stage image to container registry
+      condition: and(succeeded(), eq(variables['buildStageImage'], 'true'))
+      inputs:
+        command: buildAndPush
+        repository: $(imageRepository)
+        dockerfile: $(docker_stagefilePath)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          dev-$(tag)
+    - task: Docker@2
+      displayName: Build and push prod image to container registry
+      condition: and(succeeded(), eq(variables['buildProdImage'], 'true'))
       inputs:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          $(tag)
+          prod-$(tag)
