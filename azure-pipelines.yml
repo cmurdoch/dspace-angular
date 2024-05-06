@@ -20,9 +20,6 @@ variables:
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
-  # Variable to control the building of the dev image
-  buildProdImage: false
-  buildStageImage: false
 
 stages:
 - stage: Build
@@ -52,7 +49,6 @@ stages:
     steps:
     - task: Docker@2
       displayName: Build and push a stage image to container registry
-      condition: and(succeeded(), eq(variables['buildStageImage'], 'true'))
       inputs:
         command: buildAndPush
         repository: $(imageRepository)
@@ -70,7 +66,6 @@ stages:
     steps:
     - task: Docker@2
       displayName: Build and push prod image to container registry
-      condition: and(succeeded(), eq(variables['buildProdImage'], 'true'))
       inputs:
         command: buildAndPush
         repository: $(imageRepository)
