@@ -42,6 +42,14 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           dev-$(tag)
+- stage: BuildStage
+  displayName: Build stuff
+  jobs:
+  - job: Build
+    displayName: Build main image 2
+    pool:
+      vmImage: $(vmImageName)
+    steps:
     - task: Docker@2
       displayName: Build and push a stage image to container registry
       condition: and(succeeded(), eq(variables['buildStageImage'], 'true'))
@@ -51,7 +59,15 @@ stages:
         dockerfile: $(docker_stagefilePath)
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
-          dev-$(tag)
+          stage-$(tag)
+- stage: BuildProd
+  displayName: Build stuff
+  jobs:
+  - job: Build
+    displayName: Build main image 2
+    pool:
+      vmImage: $(vmImageName)
+    steps:
     - task: Docker@2
       displayName: Build and push prod image to container registry
       condition: and(succeeded(), eq(variables['buildProdImage'], 'true'))
