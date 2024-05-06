@@ -22,8 +22,8 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 stages:
-- stage: Build
-  displayName: Build and push stage
+- stage: BuildDev
+  displayName: Build and push dev image to container registry
   jobs:
   - job: Build
     displayName: Build main image
@@ -39,8 +39,9 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           dev-$(tag)
+          latest_dev
 - stage: BuildStage
-  displayName: Build stuff
+  displayName: Build and push stage image to container registry
   jobs:
   - job: Build
     displayName: Build main image 2
@@ -56,8 +57,9 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           stage-$(tag)
+          latest_stage
 - stage: BuildProd
-  displayName: Build stuff
+  displayName: Build and push prod image to container registry
   jobs:
   - job: Build
     displayName: Build main image 2
@@ -73,3 +75,4 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           prod-$(tag)
+          latest
